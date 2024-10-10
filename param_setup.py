@@ -10,6 +10,7 @@ class Model:
     def __str__(self):
         return f"Index: {self.index}, Name: {self.name}, Path: {self.path}"
 
+
 # Список моделей
 
 
@@ -20,7 +21,6 @@ Models = [
 
 
 def param_setup():
-
     p = pyaudio.PyAudio()
 
     device_count = p.get_device_count()
@@ -31,23 +31,22 @@ def param_setup():
         device_info = p.get_device_info_by_index(i)
 
         if device_info['maxInputChannels'] != 0:
-
             print(f"Device {i}: {device_info['name']}, Input Channels: {device_info['maxInputChannels']}")
 
     try:
 
-        mic_index = int(input("\n"+"Enter mic number: "))
+        mic_index = int(input("\n" + "Enter mic number: "))
 
         if not 1 <= mic_index <= device_count:
-
             print("Not found.")
             exit(404)
 
-        device_info=p.get_device_info_by_index(mic_index)
-        print("\n"+f"Using device: {mic_index}: {device_info['name']}, Input Channels: {device_info['maxInputChannels']}"+"\n")
+        device_info = p.get_device_info_by_index(mic_index)
+        print(
+            "\n" + f"Using device: {mic_index}: {device_info['name']},"
+                   f" Input Channels: {device_info['maxInputChannels']}" + "\n")
         for element in Models:
             print(element)
-
 
         user_index = int(input("\nEnter index: "))
 
@@ -66,9 +65,11 @@ def param_setup():
         print("Incorrect input.")
         exit(400)
 
+    except KeyboardInterrupt:
+        exit(521)
+
     print("\n")
 
-    time_until_off_vosk=int(input("Time threshold until off speech recognition(sec): "))
+    time_until_off_vosk = int(input("Time threshold until off speech recognition(sec): "))
 
     return mic_index, model_path, time_until_off_vosk
-

@@ -10,6 +10,7 @@ CHANNELS = 1
 RATE = 16000
 CHUNK = 8000
 
+
 def stream_init(mic_index):
     return sound.open(
         format=FORMAT,
@@ -41,7 +42,7 @@ def decode(mic_index, model_path, time_until_off_vosk):
                 else:
                     # Проверка на тишину
                     if time.time() - time_last_activity > time_until_off_vosk:
-                        print("Cleaning cache.")
+                        #Cleaning voice stream
                         stream.stop_stream()
                         stream.close()
                         stream = stream_init(mic_index)
@@ -57,5 +58,3 @@ def decode(mic_index, model_path, time_until_off_vosk):
         model_ru = None
         del model_ru
         print("memory cleared")
-
-
