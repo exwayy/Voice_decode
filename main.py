@@ -13,6 +13,7 @@ def main():
     for text in decode(mic_index, model_path, time_until_off_vosk):
         print(text)
         if TRIG_WORD in text:
+
             pass
 
 if __name__ == "__main__":

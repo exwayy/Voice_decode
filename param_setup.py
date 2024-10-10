@@ -57,7 +57,6 @@ def param_setup():
             print(f"\nUsing \n{user_index}: {model.name}, {model.path}")
 
         else:
-
             print("Not found.")
             exit(404)
 

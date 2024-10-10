@@ -43,6 +43,7 @@ def decode(mic_index, model_path, time_until_off_vosk):
                     # Проверка на тишину
                     if time.time() - time_last_activity > time_until_off_vosk:
                         #Cleaning voice stream
+
                         stream.stop_stream()
                         stream.close()
                         stream = stream_init(mic_index)
