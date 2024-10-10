@@ -71,3 +71,4 @@ def param_setup():
     time_until_off_vosk=int(input("Time threshold until off speech recognition(sec): "))
 
     return mic_index, model_path, time_until_off_vosk
+

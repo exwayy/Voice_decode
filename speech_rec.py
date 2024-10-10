@@ -58,3 +58,4 @@ def decode(mic_index, model_path, time_until_off_vosk):
         del model_ru
         print("memory cleared")
 
+
