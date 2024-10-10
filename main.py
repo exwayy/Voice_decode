@@ -3,7 +3,6 @@ from speech_rec import decode
 
 TRIG_WORD = ""
 
-
 def main():
     (mic_index,
      model_path,

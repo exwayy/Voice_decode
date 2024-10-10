@@ -49,6 +49,7 @@ def param_setup():
         for element in Models:
             print(element)
 
+
         user_index = int(input("\nEnter index: "))
 
         if 1 <= user_index <= len(Models):

@@ -10,7 +10,6 @@ CHANNELS = 1
 RATE = 16000
 CHUNK = 8000
 
-
 def stream_init(mic_index):
     return sound.open(
         format=FORMAT,
