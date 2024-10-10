@@ -48,11 +48,13 @@ def decode(mic_index, model_path, time_until_off_vosk):
                         time_last_activity = time.time()
 
     except KeyboardInterrupt:
-        print(523)
+        print("Stream closed.")
+        exit(521)
 
     finally:
         stream.stop_stream()
         stream.close()
         model_ru = None
         del model_ru
-        print("Stream closed.")
+        print("memory cleared")
+
