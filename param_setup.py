@@ -10,7 +10,6 @@ class Model:
     def __str__(self):
         return f"Index: {self.index}, Name: {self.name}, Path: {self.path}"
 
-
 # Список моделей
 
 
